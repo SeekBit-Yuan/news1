@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">见圳</string>
+    <string name="news">新闻</string>
+    <string name="service">服务</string>
+    <string name="interaction">互动</string>
+    <string name="qa">政问答</string>
+    <string name="smart">智慧深圳</string>
+    <string name="bbs">深圳论坛</string>
+    <string name="slogan">深圳第一资讯平台</string>
+
+    <string name="news_tv1">头条</string>
+    <string name="news_tv2">发现深圳</string>
+    <string name="news_tv3">各区新闻</string>
+    <string name="news_tv4">政务号</string>
+
+    <string name="news_comment">写评论……</string>
+
+    <string name="smartcity_tv1">城市服务</string>
+    <string name="smartcity_tv1_1">打车</string>
+    <string name="smartcity_tv1_2">水电</string>
+    <string name="smartcity_tv1_3">快递</string>
+    <string name="smartcity_tv1_4">机票</string>
+    <string name="smartcity_tv2">生活工具</string>
+    <string name="smartcity_tv2_1">话费</string>
+    <string name="smartcity_tv2_2">校园一卡通</string>
+    <string name="smartcity_tv2_3">信用卡还款</string>
+    <string name="smartcity_tv2_4">股票</string>
+    <string name="smartcity_tv2_5">爱心捐赠</string>
+    <string name="smartcity_tv2_6">汇率换算</string>
+    <string name="smartcity_tv2_7">游戏充值</string>
+    <string name="smartcity_tv2_8">外汇交易</string>
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="theme">#ff4200</color>
+    <color name="text0">#8a8a8a</color>
+    <color name="background1">#ffffff</color>
+    <color name="background2">#fdfdfd</color>
+    <color name="background3">#EDEDED</color>
+
+    <color name="divider">#b2b2b2</color>
+
+    <color name="news_vp">#666666</color>
+
+    <color name="smartcity_text">#8a8a8a</color>
+
+    <color name="news_title">#79bb19</color>
+
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sznews.news.MainActivity">
+
+    <include layout="@layout/tool_bar1" />
+
+    <FrameLayout
+        android:id="@+id/Framegment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"></FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_bar"
+        android:background="@color/background2"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_news"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_selector_news"
+            android:text="@string/news" />
+
+        <RadioButton
+            android:id="@+id/radio_smartcity"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_selector_smartcity"
+            android:text="@string/smart" />
+
+        <RadioButton
+            android:id="@+id/radio_szbbs"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_selector_szbbs"
+            android:text="@string/bbs" />
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background1">
+
+    <LinearLayout
+        android:id="@+id/smartcity_life"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/smartcity_title_text"
+        android:orientation="vertical"
+        android:background="@color/background3">
+
+        <TextView
+            android:id="@+id/smartcity_life_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/smartcity_title_text"
+            android:textSize="@dimen/smartcity_title_textsize"
+            android:textColor="@color/smartcity_text"
+            android:text="@string/smartcity_tv1">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/smartcity_life_icon1"
+        android:layout_height="@dimen/smartcity_icon_height"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/smartcity_life_radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/smartcity_icon_height"
+            android:background="@color/background2"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radio1"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_life_icon1"
+                android:text="@string/smartcity_tv1_1" />
+
+            <RadioButton
+                android:id="@+id/radio2"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_life_icon2"
+                android:text="@string/smartcity_tv1_2" />
+
+            <RadioButton
+                android:id="@+id/radio3"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_life_icon3"
+                android:text="@string/smartcity_tv1_3" />
+
+            <RadioButton
+                android:id="@+id/radio4"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_life_icon4"
+                android:text="@string/smartcity_tv1_4" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/smartcity_tool"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/smartcity_title_text"
+        android:orientation="vertical"
+        android:background="@color/background3">
+
+        <TextView
+            android:id="@+id/smartcity_tool_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/smartcity_title_text"
+            android:textSize="@dimen/smartcity_title_textsize"
+            android:textColor="@color/smartcity_text"
+            android:text="@string/smartcity_tv2">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/smartcity_tool_icon1"
+        android:layout_height="@dimen/smartcity_icon_height"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/smartcity_tool_radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/smartcity_icon_height"
+            android:background="@color/background2"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radio1_tool"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_tool_icon1"
+                android:text="@string/smartcity_tv2_1" />
+
+            <RadioButton
+                android:id="@+id/radio2_tool"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_tool_icon2"
+                android:text="@string/smartcity_tv2_2" />
+
+            <RadioButton
+                android:id="@+id/radio3_tool"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_tool_icon3"
+                android:text="@string/smartcity_tv2_3" />
+
+            <RadioButton
+                android:id="@+id/radio4_tool"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_tool_icon4"
+                android:text="@string/smartcity_tv2_4" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/smartcity_tool_icon2"
+        android:layout_height="@dimen/smartcity_icon_height"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/smartcity_tool_radioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/smartcity_icon_height"
+            android:background="@color/background2"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radio5_tool"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_tool_icon5"
+                android:text="@string/smartcity_tv2_5" />
+
+            <RadioButton
+                android:id="@+id/radio6_tool"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_tool_icon6"
+                android:text="@string/smartcity_tv2_6" />
+
+            <RadioButton
+                android:id="@+id/radio7_tool"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_tool_icon7"
+                android:text="@string/smartcity_tv2_7" />
+
+            <RadioButton
+                android:id="@+id/radio8_tool"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/smartcity_tool_icon8"
+                android:text="@string/smartcity_tv2_8" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>
