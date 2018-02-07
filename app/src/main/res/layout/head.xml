@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/sideslip_head_background">
+    <ImageView
+        android:id="@+id/login"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="42dp"
+        android:src="@mipmap/ic_login" />
+
+    <TextView
+        android:id="@+id/sideslip_headtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/sideslip_headtitle"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#33000000"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/sideslip_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/sideslip_collection"
+            style="@style/tab_sideslip_bar"
+            android:drawableTop="@drawable/tab_selector_sideslip_collection"
+            android:text="@string/sideslip_collection" />
+
+        <RadioButton
+            android:id="@+id/sideslip_model"
+            style="@style/tab_sideslip_bar"
+            android:drawableTop="@drawable/tab_selector_sideslip_model"
+            android:text="@string/sideslip_model" />
+
+        <RadioButton
+            android:id="@+id/sideslip_setting"
+            style="@style/tab_sideslip_bar"
+            android:drawableTop="@drawable/tab_selector_sideslip_setting"
+            android:text="@string/sideslip_setting" />
+    </RadioGroup>
+
+</LinearLayout>

@@ -30,4 +30,16 @@
     <string name="smartcity_tv2_7">游戏充值</string>
     <string name="smartcity_tv2_8">外汇交易</string>
 
+    <string name="sideslip_title">电子报</string>
+    <string name="sideslip_np1">深圳特区报</string>
+    <string name="sideslip_np2">深圳商报</string>
+    <string name="sideslip_np3">深圳晚报</string>
+    <string name="sideslip_np4">晶报</string>
+    <string name="sideslip_np5">宝安日报</string>
+
+    <string name="sideslip_headtitle">立即登录</string>
+    <string name="sideslip_collection">收藏</string>
+    <string name="sideslip_model">夜间模式</string>
+    <string name="sideslip_setting">设置</string>
+
 </resources>

@@ -18,4 +18,8 @@
 
     <color name="news_title">#79bb19</color>
 
+    <color name="sideslip_head_background">#f6f6f6</color>
+    <color name="sideslip_head_image">#e1dfdf</color>
+    <color name="sideslip_menu_background">#ffffff</color>
+
 </resources>

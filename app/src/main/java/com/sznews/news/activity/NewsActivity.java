@@ -28,7 +28,7 @@ public class NewsActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.newsactivity);
+        setContentView(R.layout.news_activity);
 
         news_back = (ImageView) findViewById(R.id.news_back);
         news_back.setOnClickListener(new View.OnClickListener() {

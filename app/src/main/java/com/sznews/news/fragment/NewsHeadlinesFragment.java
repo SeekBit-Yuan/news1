@@ -39,7 +39,6 @@ public class NewsHeadlinesFragment extends Fragment implements AdapterView.OnIte
     private Handler getNewsHander = new Handler(){
         public void handleMessage(android.os.Message msg){
             String jsonData = (String) msg.obj;
-            System.out.println(jsonData);
             try {
                 JSONArray jsonArray = new JSONArray(jsonData);
                 for(int i=0;i<jsonArray.length();i++){

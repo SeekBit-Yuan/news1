@@ -7,6 +7,8 @@
     android:showDividers="end"
     android:divider="@drawable/tab_toolbar">
 
+    <include layout="@layout/tool_bar1" />
+
     <RadioGroup
         android:id="@+id/news_tab_bar"
         android:layout_width="match_parent"

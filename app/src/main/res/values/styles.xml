@@ -50,4 +50,16 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="tab_sideslip_bar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:textColor">@drawable/tab_selector_tv_color</item>
+        <item name="android:background">@drawable/tab_selector_news_bar</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>

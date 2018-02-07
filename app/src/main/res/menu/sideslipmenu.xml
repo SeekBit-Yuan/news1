@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="@string/sideslip_title">
+        <menu>
+            <item
+                android:id="@+id/np1"
+                android:icon="@mipmap/ic_newspaper"
+                android:title="@string/sideslip_np1"/>
+            <item
+                android:id="@+id/np2"
+                android:icon="@mipmap/ic_newspaper"
+                android:title="@string/sideslip_np2"/>
+            <item
+                android:id="@+id/np3"
+                android:icon="@mipmap/ic_newspaper"
+                android:title="@string/sideslip_np3"/>
+            <item
+                android:id="@+id/np4"
+                android:icon="@mipmap/ic_newspaper"
+                android:title="@string/sideslip_np4"/>
+            <item
+                android:id="@+id/np5"
+                android:icon="@mipmap/ic_newspaper"
+                android:title="@string/sideslip_np5"/>
+        </menu>
+    </item>
+</menu>

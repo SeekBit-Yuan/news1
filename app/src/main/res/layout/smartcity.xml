@@ -5,6 +5,8 @@
     android:orientation="vertical"
     android:background="@color/background1">
 
+    <include layout="@layout/tool_bar1" />
+
     <LinearLayout
         android:id="@+id/smartcity_life"
         android:layout_width="match_parent"

@@ -30,6 +30,8 @@
         <activity android:name=".activity.NewsActivity"></activity>
 
         <activity android:name=".activity.SzbbsActivity"></activity>
+
+        <activity android:name=".activity.DigitalNewspaperActivity"></activity>
     </application>
 
 </manifest>
