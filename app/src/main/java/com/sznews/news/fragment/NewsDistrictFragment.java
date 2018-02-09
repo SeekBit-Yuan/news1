@@ -9,7 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.sznews.news.R;
 import com.sznews.news.adapter.MyFragmentAdapter;
@@ -44,11 +43,12 @@ public class NewsDistrictFragment extends Fragment{
             bundle.putInt("arg",i);
             fragment.setArguments(bundle);
             fragmentList.add(fragment);
-//            fragmentList.add(CategoryTabStrip.newInstance(titles[i]));
+//            fragmentList.add(CategoryFragment.newInstance(titles[i]));
         }
 
         FragmentPagerAdapter adapter = new MyFragmentAdapter(fragmentList,titles,getChildFragmentManager());
         viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(18);
         TabLayout tabLayout = (TabLayout) getActivity().findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
     }

@@ -39,11 +39,22 @@
 
     </RadioGroup>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-    </android.support.v4.view.ViewPager>
+        android:layout_height="1dp"
+        android:background="#33000000" />
+
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/viewPager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1">-->
+    <!--</android.support.v4.view.ViewPager>-->
+
+    <FrameLayout
+        android:id="@+id/news_Framegment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"></FrameLayout>
 
 </LinearLayout>

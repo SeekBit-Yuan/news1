@@ -17,7 +17,7 @@ import com.sznews.news.R;
 public class NewsFindFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.news_fragment, null);
+        View view = inflater.inflate(R.layout.news_fragment_null, null);
         TextView txt_content = (TextView) view.findViewById(R.id.txt_content);
         txt_content.setText("发现深圳");
         return view;

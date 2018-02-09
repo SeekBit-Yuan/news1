@@ -12,9 +12,7 @@ import java.util.List;
  */
 
 public class MyFragmentAdapter extends FragmentPagerAdapter{
-    private final int PAGE_COUNT = 5;
     private final String[] titles;
-    private Context context;
     private List<Fragment> fragments;
 
     public MyFragmentAdapter(List<Fragment> fragments, String[] titles, FragmentManager fm) {

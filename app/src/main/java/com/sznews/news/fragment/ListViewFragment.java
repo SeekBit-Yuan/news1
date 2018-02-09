@@ -33,14 +33,24 @@ public class ListViewFragment extends Fragment implements AdapterView.OnItemClic
     private NewsAdapter newsAdapter;
     private List<News> newsList = new ArrayList<News>();
 
-    public static final String GET_NEWS_URL = "http://v2.sznews.com/NewsDemo/getNewsJSON.php";
-    public static final String GET_NEWS_URL1 = "http://v2.sznews.com/NewsDemo/getNewsJSON1.php";
-    public static final String GET_NEWS_URL2 = "http://v2.sznews.com/NewsDemo/getNewsJSON2.php";
-    public static final String GET_NEWS_URL3 = "http://v2.sznews.com/NewsDemo/getNewsJSON3.php";
-    public static final String GET_NEWS_URL4 = "http://v2.sznews.com/NewsDemo/getNewsJSON4.php";
-    public static final String GET_NEWS_URL5 = "http://v2.sznews.com/NewsDemo/getNewsJSON5.php";
-    public static final String GET_NEWS_URL6 = "http://v2.sznews.com/NewsDemo/getNewsJSON6.php";
-    public static final String GET_NEWS_URL7 = "http://v2.sznews.com/NewsDemo/getNewsJSON7.php";
+    public static final String GET_NEWS_URL = "https://wx.sznews.com/sznewswx/list_category_176_page_1.json";
+    public static final String GET_NEWS_URL1 = "https://wx.sznews.com/sznewswx/list_category_153_page_1.json";
+    public static final String GET_NEWS_URL2 = "https://wx.sznews.com/sznewswx/list_category_178_page_1.json";
+    public static final String GET_NEWS_URL3 = "https://wx.sznews.com/sznewswx/list_category_174_page_1.json";
+    public static final String GET_NEWS_URL4 = "https://wx.sznews.com/sznewswx/list_category_179_page_1.json";
+    public static final String GET_NEWS_URL5 = "https://wx.sznews.com/sznewswx/list_category_192_page_1.json";
+    public static final String GET_NEWS_URL6 = "https://wx.sznews.com/sznewswx/list_category_191_page_1.json";
+    public static final String GET_NEWS_URL7 = "https://wx.sznews.com/sznewswx/list_category_201_page_1.json";
+    public static final String GET_NEWS_URL8 = "https://wx.sznews.com/sznewswx/list_category_182_page_1.json";
+    public static final String GET_NEWS_URL9 = "https://wx.sznews.com/sznewswx/list_category_181_page_1.json";
+    public static final String GET_NEWS_URL10 = "https://wx.sznews.com/sznewswx/list_category_180_page_1.json";
+    public static final String GET_NEWS_URL11 = "https://wx.sznews.com/sznewswx/list_category_185_page_1.json";
+    public static final String GET_NEWS_URL12 = "https://wx.sznews.com/sznewswx/list_category_186_page_1.json";
+    public static final String GET_NEWS_URL13 = "https://wx.sznews.com/sznewswx/list_category_187_page_1.json";
+    public static final String GET_NEWS_URL14 = "https://wx.sznews.com/sznewswx/list_category_188_page_1.json";
+    public static final String GET_NEWS_URL15 = "https://wx.sznews.com/sznewswx/list_category_184_page_1.json";
+    public static final String GET_NEWS_URL16 = "https://wx.sznews.com/sznewswx/list_category_190_page_1.json";
+    public static final String GET_NEWS_URL17 = "https://wx.sznews.com/sznewswx/list_category_183_page_1.json";
 
     private Handler getNewsHander = new Handler(){
         public void handleMessage(android.os.Message msg){
@@ -50,17 +60,17 @@ public class ListViewFragment extends Fragment implements AdapterView.OnItemClic
                 JSONArray jsonArray = new JSONArray(jsonData);
                 for(int i=0;i<jsonArray.length();i++){
                     JSONObject object = jsonArray.getJSONObject(i);
-                    String title = object.getString("title");
-                    String time = object.getString("time");
-                    String content_url = object.getString("content_url");
-                    String pic_url = object.getString("pic_url");
+                    String title = object.getString("Title");
+                    String time = object.getString("Publishedtime");
+                    String pic_url = object.getString("imgurl");
+                    String content_url = object.getString("articleId");
                     newsList.add(new News(title,time,pic_url,content_url));
                 }
                 newsAdapter.notifyDataSetChanged();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        };
+        }
     };
 
     @Override
@@ -75,7 +85,7 @@ public class ListViewFragment extends Fragment implements AdapterView.OnItemClic
 
     public void initViews() {
 
-        lvNews = (ListView) view.findViewById(R.id.lvNews);
+        lvNews = (ListView) view.findViewById(R.id.news_lvNews);
         newsAdapter = new NewsAdapter1(getActivity(), newsList);
         lvNews.setAdapter(newsAdapter);
 //        HttpUtils.getNewsJSON(GET_NEWS_URL,getNewsHander);
@@ -101,6 +111,7 @@ public class ListViewFragment extends Fragment implements AdapterView.OnItemClic
 
         if (bundle != null) {
             int arg = bundle.getInt("arg");
+//            System.out.println("arg" + arg);
             // tv.setText("我是Fagment"+arg);
             switch (arg) {
                 case 0:
@@ -126,6 +137,36 @@ public class ListViewFragment extends Fragment implements AdapterView.OnItemClic
                     break;
                 case 7:
                     HttpUtils.getNewsJSON(GET_NEWS_URL7,getNewsHander);
+                    break;
+                case 8:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL8,getNewsHander);
+                    break;
+                case 9:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL9,getNewsHander);
+                    break;
+                case 10:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL10,getNewsHander);
+                    break;
+                case 11:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL11,getNewsHander);
+                    break;
+                case 12:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL12,getNewsHander);
+                    break;
+                case 13:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL13,getNewsHander);
+                    break;
+                case 14:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL14,getNewsHander);
+                    break;
+                case 15:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL15,getNewsHander);
+                    break;
+                case 16:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL16,getNewsHander);
+                    break;
+                case 17:
+                    HttpUtils.getNewsJSON(GET_NEWS_URL17,getNewsHander);
                     break;
             }
         }

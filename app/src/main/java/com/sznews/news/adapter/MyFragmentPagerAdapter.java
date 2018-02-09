@@ -11,7 +11,6 @@ import com.sznews.news.fragment.NewsFragment;
 import com.sznews.news.fragment.NewsGovernmentFragment;
 import com.sznews.news.fragment.NewsHeadlinesFragment;
 
-import java.util.List;
 
 /**
  * Created by qiy on 2018-1-23.

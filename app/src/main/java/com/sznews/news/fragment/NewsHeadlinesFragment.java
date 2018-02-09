@@ -88,18 +88,5 @@ public class NewsHeadlinesFragment extends Fragment implements AdapterView.OnIte
     @Override
     public void onActivityCreated(@Nullable Bundle saveInstanceState){
         super.onActivityCreated(saveInstanceState);
-
-//        //获取Activity里传过来的捆绑数据
-//        Bundle bundle = getArguments();
-//
-//        if (bundle != null) {
-//            int arg = bundle.getInt("arg");
-//            // tv.setText("我是Fagment"+arg);
-//            switch (arg) {
-//                case 0:
-//                    HttpUtils.getNewsJSON(GET_NEWS_URL,getNewsHander);
-//                    break;
-//            }
-//        }
     }
 }

@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <ListView
-        android:id="@+id/lvNews"
+        android:id="@+id/news_lvNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
