@@ -3,9 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/toolbar"
     android:orientation="vertical"
-    android:gravity="center_vertical"
-    android:showDividers="end"
-    android:divider="@drawable/tab_toolbar">
+    android:gravity="center_vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +26,14 @@
             android:textSize="@dimen/toolbar1_tv_size"
             android:paddingLeft="@dimen/toolbar1_tv_paddingLeft"
             android:text="@string/slogan" />
+
+        <ImageView
+            android:id="@+id/imageView_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingRight="@dimen/toolbar1_iv_paddingRight"
+            android:src="@mipmap/ic_search" />
 
     </LinearLayout>
 

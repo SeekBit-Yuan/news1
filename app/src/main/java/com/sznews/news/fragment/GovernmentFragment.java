@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 import com.sznews.news.R;
 
 /**
- * Created by qiy on 2018-1-3.
+ * Created by qiy on 2018-3-5.
  */
 
-public class SemartCityFragment extends Fragment {
+public class GovernmentFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.smartcity, null);
+        View view = inflater.inflate(R.layout.government, null);
         return view;
     }
 }

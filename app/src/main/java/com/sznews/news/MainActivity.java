@@ -21,8 +21,10 @@ import android.widget.Toast;
 
 import com.sznews.news.activity.DigitalNewspaperActivity;
 import com.sznews.news.fragment.BBSFragment;
+import com.sznews.news.fragment.GovernmentFragment;
 import com.sznews.news.fragment.NewsFragment;
-import com.sznews.news.fragment.SemartCityFragment;
+import com.sznews.news.fragment.NewsPaperFragment;
+import com.sznews.news.fragment.SmartCityFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,23 +32,29 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
 
     @BindView(R.id.radio_news)
     RadioButton radioNews;
+    @BindView(R.id.radio_newspaper)
+    RadioButton radioNewspaper;
+    @BindView(R.id.radio_government)
+    RadioButton radioGovernment;
     @BindView(R.id.radio_smartcity)
     RadioButton radioSmartcity;
     @BindView(R.id.radio_szbbs)
     RadioButton radioSzbbs;
     @BindView(R.id.radioGroup)
     RadioGroup radioGroup;
-    @BindView(R.id.sideslip)
-    DrawerLayout sideslip;
     @BindView(R.id.nav)
     NavigationView nav;
+    @BindView(R.id.sideslip)
+    DrawerLayout sideslip;
 
     private NewsFragment newsFragment;
-    private SemartCityFragment smartcityFragment;
+    private NewsPaperFragment newsPaperFragment;
+    private GovernmentFragment governmentFragment;
+    private SmartCityFragment smartcityFragment;
     private BBSFragment szbbsFragment;
 
     private FragmentManager fragmentManager;
@@ -54,8 +62,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     SimpleDateFormat format1 = new SimpleDateFormat("yyyyMM");
     SimpleDateFormat format2 = new SimpleDateFormat("dd");
-    String ym=format1.format(new Date());
-    String d=format2.format(new Date());
+    String ym = format1.format(new Date());
+    String d = format2.format(new Date());
 
     private final String DIGITAL_NEWSPAPER_URL1 = "http://sztqb.sznews.com/MB/layout/" + ym + "/" + d + "/colA01.html";
     private final String DIGITAL_NEWSPAPER_URL2 = "http://szsb.sznews.com//MB/layout/" + ym + "/" + d + "/colA01.html";
@@ -71,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         ButterKnife.bind(this);
 
         //自定义底部radiobutton图片大小和位置
-        changeImageSize();
+//        changeImageSize();
         //侧滑栏
         sideslip();
 
@@ -88,16 +96,24 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private void changeImageSize() {
         //定义底部标签图片大小
         Drawable tab_news = getResources().getDrawable(R.drawable.tab_selector_news);
-        tab_news.setBounds(0, 0, 69, 69);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
+        tab_news.setBounds(0, 0, 96, 64);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
+        radioNews.setCompoundDrawables(null, tab_news, null, null);//只放上面
+
+        Drawable tab_newspaper = getResources().getDrawable(R.drawable.tab_selector_newspaper);
+        tab_news.setBounds(0, 0, 96, 64);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
+        radioNews.setCompoundDrawables(null, tab_news, null, null);//只放上面
+
+        Drawable tab_government = getResources().getDrawable(R.drawable.tab_selector_government);
+        tab_news.setBounds(0, 0, 96, 64);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
         radioNews.setCompoundDrawables(null, tab_news, null, null);//只放上面
 
         Drawable tab_service = getResources().getDrawable(R.drawable.tab_selector_smartcity);
-        tab_service.setBounds(0, 0, 69, 69);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
+        tab_service.setBounds(0, 0, 96, 64);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
         radioSmartcity.setCompoundDrawables(null, tab_service, null, null);//只放上面
 
-        Drawable tab_hudong = getResources().getDrawable(R.drawable.tab_selector_smartcity);
-        tab_hudong.setBounds(0, 0, 69, 69);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
-        radioSzbbs.setCompoundDrawables(null, tab_hudong, null, null);//只放上面
+        Drawable tab_szbbs = getResources().getDrawable(R.drawable.tab_selector_szbbs);
+        tab_szbbs.setBounds(0, 0, 96, 64);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
+        radioSzbbs.setCompoundDrawables(null, tab_szbbs, null, null);//只放上面
     }
 
     //侧滑栏
@@ -110,24 +126,24 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 int id = item.getItemId();
 
                 if (id == R.id.np1) {
-                    Intent intent = new Intent(MainActivity.this,DigitalNewspaperActivity.class);
-                    intent.putExtra("digitalnewspaper_url",DIGITAL_NEWSPAPER_URL1);
+                    Intent intent = new Intent(MainActivity.this, DigitalNewspaperActivity.class);
+                    intent.putExtra("digitalnewspaper_url", DIGITAL_NEWSPAPER_URL1);
                     startActivity(intent);
                 } else if (id == R.id.np2) {
-                    Intent intent = new Intent(MainActivity.this,DigitalNewspaperActivity.class);
-                    intent.putExtra("digitalnewspaper_url",DIGITAL_NEWSPAPER_URL2);
+                    Intent intent = new Intent(MainActivity.this, DigitalNewspaperActivity.class);
+                    intent.putExtra("digitalnewspaper_url", DIGITAL_NEWSPAPER_URL2);
                     startActivity(intent);
                 } else if (id == R.id.np3) {
-                    Intent intent = new Intent(MainActivity.this,DigitalNewspaperActivity.class);
-                    intent.putExtra("digitalnewspaper_url",DIGITAL_NEWSPAPER_URL3);
+                    Intent intent = new Intent(MainActivity.this, DigitalNewspaperActivity.class);
+                    intent.putExtra("digitalnewspaper_url", DIGITAL_NEWSPAPER_URL3);
                     startActivity(intent);
                 } else if (id == R.id.np4) {
-                    Intent intent = new Intent(MainActivity.this,DigitalNewspaperActivity.class);
-                    intent.putExtra("digitalnewspaper_url",DIGITAL_NEWSPAPER_URL4);
+                    Intent intent = new Intent(MainActivity.this, DigitalNewspaperActivity.class);
+                    intent.putExtra("digitalnewspaper_url", DIGITAL_NEWSPAPER_URL4);
                     startActivity(intent);
                 } else if (id == R.id.np5) {
-                    Intent intent = new Intent(MainActivity.this,DigitalNewspaperActivity.class);
-                    intent.putExtra("digitalnewspaper_url",DIGITAL_NEWSPAPER_URL5);
+                    Intent intent = new Intent(MainActivity.this, DigitalNewspaperActivity.class);
+                    intent.putExtra("digitalnewspaper_url", DIGITAL_NEWSPAPER_URL5);
                     startActivity(intent);
                 }
 
@@ -157,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         radioCollection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,getString(R.string.sideslip_collection),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.sideslip_collection), Toast.LENGTH_SHORT).show();
                 sideslip.closeDrawer(nav);
             }
         });
@@ -165,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         radioModel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,getString(R.string.sideslip_model),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.sideslip_model), Toast.LENGTH_SHORT).show();
                 sideslip.closeDrawer(nav);
             }
         });
@@ -173,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         radioSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,getString(R.string.sideslip_setting),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.sideslip_setting), Toast.LENGTH_SHORT).show();
                 sideslip.closeDrawer(nav);
             }
         });
@@ -181,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         imageLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,getString(R.string.sideslip_headtitle),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.sideslip_headtitle), Toast.LENGTH_SHORT).show();
                 sideslip.closeDrawer(nav);
             }
         });
@@ -189,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         textLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,getString(R.string.sideslip_headtitle),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.sideslip_headtitle), Toast.LENGTH_SHORT).show();
                 sideslip.closeDrawer(nav);
             }
         });
@@ -251,9 +267,25 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                     fTransaction.show(newsFragment);
                 }
                 break;
+            case R.id.radio_newspaper:
+                if (newsPaperFragment == null) {
+                    newsPaperFragment = new NewsPaperFragment();
+                    fTransaction.add(R.id.Framegment, newsPaperFragment);
+                } else {
+                    fTransaction.show(newsPaperFragment);
+                }
+                break;
+            case R.id.radio_government:
+                if (governmentFragment == null) {
+                    governmentFragment = new GovernmentFragment();
+                    fTransaction.add(R.id.Framegment, governmentFragment);
+                } else {
+                    fTransaction.show(governmentFragment);
+                }
+                break;
             case R.id.radio_smartcity:
                 if (smartcityFragment == null) {
-                    smartcityFragment = new SemartCityFragment();
+                    smartcityFragment = new SmartCityFragment();
                     fTransaction.add(R.id.Framegment, smartcityFragment);
                 } else {
                     fTransaction.show(smartcityFragment);
@@ -276,6 +308,12 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private void hideFragment(FragmentTransaction transaction) {
         if (newsFragment != null) {
             transaction.hide(newsFragment);
+        }
+        if (newsPaperFragment != null) {
+            transaction.hide(newsPaperFragment);
+        }
+        if (governmentFragment != null) {
+            transaction.hide(governmentFragment);
         }
         if (smartcityFragment != null) {
             transaction.hide(smartcityFragment);

@@ -1,17 +1,16 @@
 <resources>
     <string name="app_name">见圳</string>
     <string name="news">新闻</string>
-    <string name="service">服务</string>
-    <string name="interaction">互动</string>
-    <string name="qa">政问答</string>
+    <string name="newspaper">数字报</string>
+    <string name="government">政务+</string>
     <string name="smart">智慧深圳</string>
     <string name="bbs">深圳论坛</string>
-    <string name="slogan">深圳第一资讯平台</string>
+    <string name="slogan">深圳第一新闻门户</string>
 
     <string name="news_tv1">头条</string>
     <string name="news_tv2">发现深圳</string>
-    <string name="news_tv3">各区新闻</string>
-    <string name="news_tv4">政务号</string>
+    <string name="news_tv3">深圳社区</string>
+    <string name="news_tv4">政务+</string>
 
     <string name="news_comment">写评论……</string>
 

@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="tab_menu_top">5dp</dimen>
-    <dimen name="tab_bar">50dp</dimen>
+    <dimen name="tab_bar">52dp</dimen>
     <dimen name="toolbar">50dp</dimen>
-    <dimen name="toolbar_divider">2dp</dimen>
+    <dimen name="toolbar_divider">3dp</dimen>
 
     <dimen name="toolbar1_logowidth">50dp</dimen>
     <dimen name="toolbar1_tv_size">18sp</dimen>
     <dimen name="toolbar1_tv_paddingLeft">10dp</dimen>
+    <dimen name="toolbar1_iv_paddingRight">10dp</dimen>
 
     <dimen name="news_bar">40dp</dimen>
     <dimen name="news_tv_size">14sp</dimen>
     <dimen name="news_activity_title">20sp</dimen>
     <dimen name="news_button">4dp</dimen>
     <dimen name="news_list_title">16sp</dimen>
+    <dimen name="news_list_item">12sp</dimen>
     <dimen name="news_list_padding">6dp</dimen>
     <dimen name="news_list_margin">6dp</dimen>
     <dimen name="news_activity_top">40dp</dimen>

@@ -2,6 +2,8 @@ package com.sznews.news.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +11,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.sznews.news.R;
 import com.sznews.news.activity.NewsActivity;
 import com.sznews.news.model.News;
 import com.sznews.news.utils.HttpUtils;
 
 import java.util.List;
+import java.util.ResourceBundle;
 
 /**
  * Created by qiy on 2018-1-24.
@@ -73,8 +78,17 @@ public class NewsAdapter extends BaseAdapter {
         tvTitle.setText(news.getTitle());
         tvTime.setText(news.getTime());
 
+        RequestOptions options = new RequestOptions()
+                .placeholder(R.drawable.ic_launcher)
+                .error(R.drawable.ic_launcher)
+                .fallback(R.drawable.ic_launcher);
+
         String pic_url = news.getPic_url();
-        HttpUtils.setPicBitmap(ivPic,pic_url);
+//        HttpUtils.setPicBitmap(ivPic,pic_url);
+        Glide.with(context)
+                .load(pic_url)
+                .apply(options)
+                .into(ivPic);
 
         return view;
     }

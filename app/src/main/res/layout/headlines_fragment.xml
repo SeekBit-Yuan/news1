@@ -4,11 +4,24 @@
     android:layout_height="match_parent"
     android:background="@color/background1">
 
-    <ListView
-        android:id="@+id/lvNews"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/headlines_swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-    </ListView>
+        android:layout_height="match_parent">
+
+        <!--<ListView-->
+            <!--android:id="@+id/lvNews"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1">-->
+        <!--</ListView>-->
+
+        <com.sznews.news.utils.LoadListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.sznews.news.utils.LoadListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

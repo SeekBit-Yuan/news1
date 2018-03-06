@@ -5,6 +5,9 @@ import android.graphics.BitmapFactory;
 import android.os.Message;
 import android.widget.ImageView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -58,5 +61,33 @@ public class HttpUtils {
                 }
             }
         }).start();
+    }
+
+    public static JSONArray joinJSONArray(JSONArray mData, JSONArray array) {
+        StringBuffer buffer = new StringBuffer();
+        try {
+            int len = mData.length();
+            for (int i = 0; i < len; i++) {
+                JSONObject obj1 = (JSONObject) mData.get(i);
+                if (i == len - 1)
+                    buffer.append(obj1.toString());
+                else
+                    buffer.append(obj1.toString()).append(",");
+            }
+            len = array.length();
+            if (len > 0)
+                buffer.append(",");
+            for (int i = 0; i < len; i++) {
+                JSONObject obj1 = (JSONObject) array.get(i);
+                if (i == len - 1)
+                    buffer.append(obj1.toString());
+                else
+                    buffer.append(obj1.toString()).append(",");
+            }
+            buffer.insert(0, "[").append("]");
+            return new JSONArray(buffer.toString());
+        } catch (Exception e) {
+        }
+        return null;
     }
 }

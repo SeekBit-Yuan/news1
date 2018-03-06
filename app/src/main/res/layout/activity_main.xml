@@ -36,6 +36,18 @@
                 android:text="@string/news" />
 
             <RadioButton
+                android:id="@+id/radio_newspaper"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/tab_selector_newspaper"
+                android:text="@string/newspaper" />
+
+            <RadioButton
+                android:id="@+id/radio_government"
+                style="@style/tab_menu_item"
+                android:drawableTop="@drawable/tab_selector_government"
+                android:text="@string/government" />
+
+            <RadioButton
                 android:id="@+id/radio_smartcity"
                 style="@style/tab_menu_item"
                 android:drawableTop="@drawable/tab_selector_smartcity"

@@ -14,7 +14,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
-        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">2dp</item>
         <item name="android:textColor">@drawable/tab_selector_tv_color</item>
         <item name="android:textSize">12sp</item>
     </style>
@@ -37,6 +37,12 @@
         <item name="android:textColor">@drawable/tab_selector_tv_color</item>
         <item name="android:background">@drawable/tab_selector_news_bar</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="tab_news_item_voice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
     </style>
 
     <style name="smartcity_item">
