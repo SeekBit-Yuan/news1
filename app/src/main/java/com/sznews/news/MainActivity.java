@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     NavigationView nav;
     @BindView(R.id.sideslip)
     DrawerLayout sideslip;
+    @BindView(R.id.imageView_login)
+    ImageView imageViewLogin;
+    @BindView(R.id.imageView_search)
+    ImageView imageViewSearch;
 
     private NewsFragment newsFragment;
     private NewsPaperFragment newsPaperFragment;
@@ -91,6 +95,24 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         //获取第一个单选按钮，并设置其为选中状态
         radioNews = (RadioButton) findViewById(R.id.radio_news);
         radioNews.setChecked(true);
+
+        imageViewLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (sideslip.isDrawerOpen(nav)) {
+                    sideslip.closeDrawer(nav);
+                } else {
+                    sideslip.openDrawer(nav);
+                }
+            }
+        });
+
+        imageViewSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText( MainActivity.this,"搜索", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void changeImageSize() {
@@ -347,7 +369,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.imageView_logo://点击logo，跳出侧滑菜单
+            case R.id.imageView_login://点击logo，跳出侧滑菜单
                 if (sideslip.isDrawerOpen(nav)) {
                     sideslip.closeDrawer(nav);
                 } else {
@@ -356,4 +378,5 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
         }
     }
+
 }

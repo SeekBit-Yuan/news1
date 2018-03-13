@@ -36,8 +36,6 @@ public class NewsFragment extends Fragment implements RadioGroup.OnCheckedChange
     RadioButton newsFind;
     @BindView(R.id.news_district)
     RadioButton newsDistrict;
-    @BindView(R.id.news_government)
-    RadioButton newsGovernment;
     @BindView(R.id.news_tab_bar)
     RadioGroup newsTabBar;
 //    @BindView(R.id.viewPager)
@@ -47,7 +45,6 @@ public class NewsFragment extends Fragment implements RadioGroup.OnCheckedChange
     private NewsHeadlinesFragment newsHeadlinesFragment;
     private NewsFindFragment newsFindFragment;
     private  NewsDistrictFragment newsDistrictFragment;
-    private  NewsGovernmentFragment newsGovernmentFragment;
 
     private FragmentManager fragmentManager;
     private FragmentTransaction transaction;
@@ -114,14 +111,6 @@ public class NewsFragment extends Fragment implements RadioGroup.OnCheckedChange
                     fTransaction.show(newsDistrictFragment);
                 }
                 break;
-            case R.id.news_government:
-                if (newsGovernmentFragment == null) {
-                    newsGovernmentFragment = new NewsGovernmentFragment();
-                    fTransaction.add(R.id.news_Framegment, newsGovernmentFragment);
-                } else {
-                    fTransaction.show(newsGovernmentFragment);
-                }
-                break;
         }
         fTransaction.commit();
     }
@@ -136,9 +125,6 @@ public class NewsFragment extends Fragment implements RadioGroup.OnCheckedChange
         }
         if (newsDistrictFragment != null) {
             transaction.hide(newsDistrictFragment);
-        }
-        if (newsGovernmentFragment != null) {
-            transaction.hide(newsGovernmentFragment);
         }
     }
 

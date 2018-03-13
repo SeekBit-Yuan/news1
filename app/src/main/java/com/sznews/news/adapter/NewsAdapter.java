@@ -2,12 +2,11 @@ package com.sznews.news.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,10 +15,8 @@ import com.bumptech.glide.request.RequestOptions;
 import com.sznews.news.R;
 import com.sznews.news.activity.NewsActivity;
 import com.sznews.news.model.News;
-import com.sznews.news.utils.HttpUtils;
 
 import java.util.List;
-import java.util.ResourceBundle;
 
 /**
  * Created by qiy on 2018-1-24.
@@ -73,6 +70,7 @@ public class NewsAdapter extends BaseAdapter {
         TextView tvTitle = (TextView) view.findViewById(R.id.tvTitle);
         TextView tvTime = (TextView) view.findViewById(R.id.tvTime);
         ImageView ivPic = (ImageView) view.findViewById(R.id.ivPic);
+        ImageButton ibVoice = view.findViewById(R.id.voice);
 
         News news = newsList.get(position);
         tvTitle.setText(news.getTitle());

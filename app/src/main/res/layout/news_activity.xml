@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="1">
 
     <RelativeLayout
         android:id="@+id/news_top"
         android:layout_width="match_parent"
         android:layout_height="@dimen/news_activity_top"
-        android:background="@color/background3">
+        android:background="@color/background1">
 
         <ImageView
             android:id="@+id/news_back"
@@ -18,27 +19,88 @@
             android:layout_margin="@dimen/news_activity_top_padding"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/ic_back"/>
+            android:src="@mipmap/arrow_gray"/>
 
-        <TextView
-            android:id="@+id/news_text"
+        <ImageView
+            android:id="@+id/news_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:gravity="center"
             android:layout_margin="@dimen/news_activity_top_padding"
-            android:text="@string/app_name"
-            android:textSize="@dimen/news_activity_title"
-            android:textColor="@color/theme"/>
-
+            android:src="@mipmap/share_gray">
+        </ImageView>
     </RelativeLayout>
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/news_detail_title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:background="@color/background1">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/news_detail_tvTitle"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingLeft="@dimen/news_detail_title_padding"-->
+            <!--android:text="title"-->
+            <!--android:textSize="@dimen/news_detail_title"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@color/news_title"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/news_detail_type"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:paddingLeft="@dimen/news_detail_title_padding"-->
+            <!--android:paddingBottom="@dimen/news_detail_title_padding"-->
+            <!--android:src="@mipmap/zhuanti"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/news_detail_browse"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignBottom="@+id/news_detail_type"-->
+            <!--android:layout_toRightOf="@+id/news_detail_type"-->
+            <!--android:paddingBottom="@dimen/news_detail_title_padding"-->
+            <!--android:paddingLeft="8dp"-->
+            <!--android:src="@mipmap/ic_browse"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/news_detail_browseNum"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignBottom="@+id/news_detail_browse"-->
+            <!--android:layout_toRightOf="@+id/news_detail_browse"-->
+            <!--android:paddingBottom="@dimen/news_detail_title_padding"-->
+            <!--android:paddingLeft="2dp"-->
+            <!--android:text="425"-->
+            <!--android:textSize="@dimen/news_detail_browseNum"-->
+            <!--android:textColor="@color/news_tab"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/news_detail_time"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignBottom="@+id/news_detail_browse"-->
+            <!--android:layout_toRightOf="@+id/news_detail_browseNum"-->
+            <!--android:paddingBottom="@dimen/news_detail_title_padding"-->
+            <!--android:paddingLeft="8dp"-->
+            <!--android:text="2小时前"-->
+            <!--android:textSize="@dimen/news_detail_browseNum"-->
+            <!--android:textColor="@color/news_tab"/>-->
+
+    <!--</RelativeLayout>-->
 
     <WebView
         android:id="@+id/newsavtivity_webview"
         android:layout_width="match_parent"
         android:layout_height="259dp"
-        android:layout_weight="1"></WebView>
+        android:layout_weight="1">
+    </WebView>
 
     <LinearLayout
         android:id="@+id/news_button"
@@ -46,7 +108,7 @@
         android:layout_height="@dimen/news_activity_buttom"
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
-        android:background="@color/background3"
+        android:background="@color/background1"
         android:weightSum="1">
 
         <EditText
@@ -54,39 +116,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/news_comment"
+            android:textSize="16sp"
+            android:textColor="#bbbbbb"
             android:layout_marginTop="@dimen/news_button"
-            android:layout_marginLeft="@dimen/news_button"
-            android:layout_marginRight="@dimen/news_button"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="6dp"
             android:layout_marginBottom="@dimen/news_button"
             android:layout_gravity="center"
             android:background="@drawable/editshape_comment"
             android:layout_weight="0.60" />
 
         <ImageView
-            android:id="@+id/news_comment"
+            android:id="@+id/news_message"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/news_activity_button_height"
+            android:layout_gravity="center"
+            android:layout_weight="0.13"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/pinglun" />
+
+        <ImageView
+            android:id="@+id/news_like"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/news_activity_button_height"
             android:layout_gravity="center"
             android:layout_weight="0.13"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_comment" />
+            android:clickable="true"
+            android:src="@drawable/tab_selector_news_like" />
 
         <ImageView
             android:id="@+id/news_collection"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/news_activity_button_height"
             android:layout_weight="0.13"
+            android:layout_marginRight="11dp"
             android:scaleType="centerInside"
             android:layout_gravity="center"
-            android:src="@mipmap/ic_collection_news"/>
-
-        <ImageView
-            android:id="@+id/news_share"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/news_activity_button_height"
-            android:layout_weight="0.13"
-            android:scaleType="centerInside"
-            android:layout_gravity="center"
-            android:src="@mipmap/ic_share"/>
+            android:clickable="true"
+            android:src="@drawable/tab_selector_news_collection"/>
     </LinearLayout>
 </LinearLayout>

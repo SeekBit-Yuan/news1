@@ -16,7 +16,8 @@
             android:layout_toRightOf="@+id/ivPic"
             android:text="title"
             android:textStyle="bold"
-            android:textSize="@dimen/news_list_title" />
+            android:textSize="@dimen/news_list_title"
+            android:textColor="@color/news_title"/>
 
         <ImageView
             android:id="@+id/ivPic"
@@ -48,7 +49,8 @@
             android:paddingLeft="4dp"
             android:layout_marginBottom="@dimen/news_list_margin"
             android:text="425"
-            android:textSize="@dimen/news_list_item" />
+            android:textSize="@dimen/news_list_item"
+            android:textColor="@color/news_tab"/>
 
         <TextView
             android:id="@+id/tvTime"
@@ -59,7 +61,8 @@
             android:paddingLeft="16dp"
             android:layout_marginBottom="@dimen/news_list_margin"
             android:text="2小时前"
-            android:textSize="@dimen/news_list_item" />
+            android:textSize="@dimen/news_list_item"
+            android:textColor="@color/news_tab"/>
 
         <ImageButton
             android:id="@+id/voice"

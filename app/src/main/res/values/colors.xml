@@ -7,8 +7,9 @@
     <color name="theme">#ff4200</color>
     <color name="text0">#8a8a8a</color>
     <color name="background1">#ffffff</color>
-    <color name="background2">#fdfdfd</color>
+    <color name="background2">#fafafa</color>
     <color name="background3">#EDEDED</color>
+    <color name="background4">#f3f3f3</color>
 
     <color name="divider">#b2b2b2</color>
 
@@ -16,10 +17,11 @@
 
     <color name="smartcity_text">#8a8a8a</color>
 
-    <color name="news_title">#79bb19</color>
-
     <color name="sideslip_head_background">#f6f6f6</color>
     <color name="sideslip_head_image">#e1dfdf</color>
     <color name="sideslip_menu_background">#ffffff</color>
+
+    <color name="news_title">#333333</color>
+    <color name="news_tab">#999999</color>
 
 </resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/news_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ivPic"
+        android:layout_alignStart="@+id/ivPic"
+        android:layout_below="@+id/ivPic"
+        android:text="title"
+        android:textSize="@dimen/news_list_title"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ivPic"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/news_list_margin"
+        android:layout_marginTop="@dimen/news_list_margin"
+        android:src="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/browse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="36dp"
+        android:layout_toEndOf="@+id/voice"
+        android:layout_toRightOf="@+id/voice"
+        android:src="@mipmap/ic_browse"></ImageView>
+
+    <TextView
+        android:id="@+id/browseNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/browse"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/browse"
+        android:layout_toRightOf="@+id/browse"
+        android:text="425"
+        android:textSize="@dimen/news_list_item" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/browseNum"
+        android:layout_alignBottom="@+id/browseNum"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@+id/browseNum"
+        android:layout_toRightOf="@+id/browseNum"
+        android:paddingLeft="16dp"
+        android:text="2小时前"
+        android:textSize="@dimen/news_list_item" />
+
+    <ImageButton
+        android:id="@+id/voice"
+        style="@style/tab_news_item_voice"
+        android:layout_alignBottom="@+id/browse"
+        android:layout_alignLeft="@+id/tvTitle"
+        android:layout_alignStart="@+id/tvTitle"
+        android:background="@mipmap/ic_voicestart"></ImageButton>
+
+</RelativeLayout>

@@ -3,16 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:showDividers="end"
-    android:divider="@drawable/tab_toolbar">
+    android:orientation="vertical">
 
-    <include layout="@layout/tool_bar1" />
+    <!--<include layout="@layout/tool_bar1" />-->
 
     <RadioGroup
         android:id="@+id/news_tab_bar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@color/background2"
         android:orientation="horizontal">
@@ -32,17 +30,56 @@
             style="@style/tab_news_item"
             android:text="@string/news_tv3" />
 
-        <RadioButton
-            android:id="@+id/news_government"
-            style="@style/tab_news_item"
-            android:text="@string/news_tv4" />
-
     </RadioGroup>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#33000000" />
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/news_tab_bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@color/background2"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/news_headlines"-->
+            <!--style="@style/tab_news_item"-->
+            <!--android:text="@string/news_tv1"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/news_headlines_line"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignLeft="@+id/news_headlines"-->
+            <!--android:src="@mipmap/line"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/news_find"-->
+            <!--style="@style/tab_news_item"-->
+            <!--android:text="@string/news_tv2"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/news_find_line"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_toRightOf="@+id/news_headlines_line"-->
+            <!--android:src="@mipmap/line"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/news_district"-->
+            <!--style="@style/tab_news_item"-->
+            <!--android:text="@string/news_tv3"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/news_district_line"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@mipmap/line"/>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#33000000" />-->
 
     <!--<android.support.v4.view.ViewPager-->
         <!--android:id="@+id/viewPager"-->
