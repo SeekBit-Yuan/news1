@@ -13,13 +13,18 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sznews.news.activity.DigitalNewspaperActivity;
+import com.sznews.news.activity.LoginActivity;
+import com.sznews.news.activity.RegisterActivity;
+import com.sznews.news.activity.SearchActivity;
 import com.sznews.news.fragment.BBSFragment;
 import com.sznews.news.fragment.GovernmentFragment;
 import com.sznews.news.fragment.NewsFragment;
@@ -34,6 +39,17 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
 
+
+    @BindView(R.id.imageView_login)
+    ImageView imageViewLogin;
+    @BindView(R.id.imageView_logo)
+    ImageView imageViewLogo;
+    @BindView(R.id.imageView_search)
+    ImageView imageViewSearch;
+    @BindView(R.id.tool_bar1)
+    LinearLayout toolBar1;
+    @BindView(R.id.Framegment)
+    FrameLayout Framegment;
     @BindView(R.id.radio_news)
     RadioButton radioNews;
     @BindView(R.id.radio_newspaper)
@@ -50,10 +66,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     NavigationView nav;
     @BindView(R.id.sideslip)
     DrawerLayout sideslip;
-    @BindView(R.id.imageView_login)
-    ImageView imageViewLogin;
-    @BindView(R.id.imageView_search)
-    ImageView imageViewSearch;
 
     private NewsFragment newsFragment;
     private NewsPaperFragment newsPaperFragment;
@@ -110,7 +122,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         imageViewSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText( MainActivity.this,"搜索", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -123,11 +136,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         Drawable tab_newspaper = getResources().getDrawable(R.drawable.tab_selector_newspaper);
         tab_news.setBounds(0, 0, 96, 64);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
-        radioNews.setCompoundDrawables(null, tab_news, null, null);//只放上面
+        radioNewspaper.setCompoundDrawables(null, tab_news, null, null);//只放上面
 
         Drawable tab_government = getResources().getDrawable(R.drawable.tab_selector_government);
         tab_news.setBounds(0, 0, 96, 64);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
-        radioNews.setCompoundDrawables(null, tab_news, null, null);//只放上面
+        radioGovernment.setCompoundDrawables(null, tab_news, null, null);//只放上面
 
         Drawable tab_service = getResources().getDrawable(R.drawable.tab_selector_smartcity);
         tab_service.setBounds(0, 0, 96, 64);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
@@ -163,10 +176,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                     Intent intent = new Intent(MainActivity.this, DigitalNewspaperActivity.class);
                     intent.putExtra("digitalnewspaper_url", DIGITAL_NEWSPAPER_URL4);
                     startActivity(intent);
-                } else if (id == R.id.np5) {
-                    Intent intent = new Intent(MainActivity.this, DigitalNewspaperActivity.class);
-                    intent.putExtra("digitalnewspaper_url", DIGITAL_NEWSPAPER_URL5);
-                    startActivity(intent);
                 }
 
                 sideslip.closeDrawer(nav);
@@ -175,22 +184,12 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         });
 
         RadioButton radioCollection = headerView.findViewById(R.id.sideslip_collection);
+        RadioButton radioHistory = headerView.findViewById(R.id.sideslip_history);
         RadioButton radioModel = headerView.findViewById(R.id.sideslip_model);
-        RadioButton radioSetting = headerView.findViewById(R.id.sideslip_setting);
+
         ImageView imageLogin = headerView.findViewById(R.id.login);
-        TextView textLogin = headerView.findViewById(R.id.sideslip_headtitle);
-
-        Drawable tab_collection = getResources().getDrawable(R.drawable.tab_selector_sideslip_collection);
-        tab_collection.setBounds(0, 0, 60, 60);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
-        radioCollection.setCompoundDrawables(null, tab_collection, null, null);//只放上面
-
-        Drawable tab_model = getResources().getDrawable(R.drawable.tab_selector_sideslip_model);
-        tab_model.setBounds(0, 0, 60, 60);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
-        radioModel.setCompoundDrawables(null, tab_model, null, null);//只放上面
-
-        Drawable tab_setting = getResources().getDrawable(R.drawable.tab_selector_sideslip_setting);
-        tab_setting.setBounds(0, 0, 60, 60);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
-        radioSetting.setCompoundDrawables(null, tab_setting, null, null);//只放上面
+        TextView textGegister = headerView.findViewById(R.id.sideslip_head_register);
+        TextView textLogin = headerView.findViewById(R.id.sideslip_head_login);
 
         radioCollection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,10 +207,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             }
         });
 
-        radioSetting.setOnClickListener(new View.OnClickListener() {
+        radioHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, getString(R.string.sideslip_setting), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.sideslip_history), Toast.LENGTH_SHORT).show();
                 sideslip.closeDrawer(nav);
             }
         });
@@ -219,7 +218,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         imageLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, getString(R.string.sideslip_headtitle), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
                 sideslip.closeDrawer(nav);
             }
         });
@@ -227,7 +227,17 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         textLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, getString(R.string.sideslip_headtitle), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                sideslip.closeDrawer(nav);
+            }
+        });
+
+        textGegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                startActivity(intent);
                 sideslip.closeDrawer(nav);
             }
         });

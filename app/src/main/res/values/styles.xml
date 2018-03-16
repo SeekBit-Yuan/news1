@@ -67,4 +67,48 @@
         <item name="android:background">@drawable/tab_selector_news_bar</item>
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="sideslip_menu_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:textColor">@color/sideslip_menu_theme</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="sideslip_menu_item2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:gravity">center|bottom</item>
+        <item name="android:textColor">@color/sideslip_menu_theme</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="android:textColorHint">@color/login_edittext_hint</item>
+        <item name="colorControlNormal">@color/login_edittext_underline</item>
+        <item name="colorControlActivated">@color/login_edittext_hint</item>
+    </style>
+
+    <style name="Register_EditText" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:imeActionId">6</item>
+        <item name="android:imeActionLabel">@string/register_button</item>
+        <item name="android:imeOptions">actionUnspecified</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/login_edittext_text</item>
+        <item name="android:textCursorDrawable">@drawable/login_edit</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:background">@null</item>
+
+    </style>
+
 </resources>

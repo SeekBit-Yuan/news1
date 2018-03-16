@@ -6,7 +6,7 @@
 
     <color name="theme">#ff4200</color>
     <color name="text0">#8a8a8a</color>
-    <color name="background1">#ffffff</color>
+    <color name="background1">#FFFFFF</color>
     <color name="background2">#fafafa</color>
     <color name="background3">#EDEDED</color>
     <color name="background4">#f3f3f3</color>
@@ -17,11 +17,23 @@
 
     <color name="smartcity_text">#8a8a8a</color>
 
-    <color name="sideslip_head_background">#f6f6f6</color>
+    <color name="sideslip_head_background">#FFFFFF</color>
     <color name="sideslip_head_image">#e1dfdf</color>
-    <color name="sideslip_menu_background">#ffffff</color>
+    <color name="sideslip_menu_background">#FFFFFF</color>
+    <color name="sideslip_menu_theme">#666666</color>
 
     <color name="news_title">#333333</color>
     <color name="news_tab">#999999</color>
+
+    <color name="login_edittext_hint">#FF999999</color>
+    <color name="login_edittext_text">#FF333333</color>
+    <color name="login_edittext_underline">#FFE5E5E5</color>
+    <color name="login_button_bg">#FFC1C1C1</color>
+    <color name="login_button_bg_edit">#FFFF4201</color>
+
+    <color name="register_title">#FF333333</color>
+
+    <color name="search_bg">#FFF5F6F7</color>
+    <color name="search_cancel">#FFFF4201</color>
 
 </resources>

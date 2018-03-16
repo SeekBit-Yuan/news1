@@ -36,7 +36,7 @@
         android:layout_marginTop="36dp"
         android:layout_toEndOf="@+id/voice"
         android:layout_toRightOf="@+id/voice"
-        android:src="@mipmap/ic_browse"></ImageView>
+        android:src="@mipmap/ic_browse"/>
 
     <TextView
         android:id="@+id/browseNum"
@@ -70,6 +70,6 @@
         android:layout_alignBottom="@+id/browse"
         android:layout_alignLeft="@+id/tvTitle"
         android:layout_alignStart="@+id/tvTitle"
-        android:background="@mipmap/ic_voicestart"></ImageButton>
+        android:background="@mipmap/ic_voicestart"/>
 
 </RelativeLayout>
