@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/toolbar"
             android:gravity="center_vertical"
+            android:background="@color/background1"
             android:orientation="vertical">
 
             <LinearLayout
@@ -118,7 +119,6 @@
         android:fitsSystemWindows="true"
         android:background="@color/sideslip_head_background"
         app:headerLayout="@layout/head"
-        app:itemIconTint="@color/sideslip_menu_theme"
         app:itemTextColor="@color/sideslip_menu_theme"
         app:menu="@menu/sideslipmenu">
     </android.support.design.widget.NavigationView>

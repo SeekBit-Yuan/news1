@@ -118,12 +118,14 @@
             android:hint="@string/news_comment"
             android:textSize="16sp"
             android:textColor="#bbbbbb"
+            android:maxLines="1"
             android:layout_marginTop="@dimen/news_button"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="@dimen/news_button"
             android:layout_gravity="center"
             android:background="@drawable/editshape_comment"
+            android:textCursorDrawable="@drawable/login_edit"
             android:layout_weight="0.60" />
 
         <ImageView
@@ -144,7 +146,7 @@
             android:layout_weight="0.13"
             android:scaleType="centerInside"
             android:clickable="true"
-            android:src="@drawable/tab_selector_news_like" />
+            android:src="@mipmap/zan_normal" />
 
         <ImageView
             android:id="@+id/news_collection"
@@ -155,6 +157,6 @@
             android:scaleType="centerInside"
             android:layout_gravity="center"
             android:clickable="true"
-            android:src="@drawable/tab_selector_news_collection"/>
+            android:src="@mipmap/collection_normal"/>
     </LinearLayout>
 </LinearLayout>

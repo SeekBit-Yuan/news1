@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#FF4081</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#3F51B5</color>
 
     <color name="theme">#ff4200</color>
     <color name="text0">#8a8a8a</color>
-    <color name="background1">#FFFFFF</color>
-    <color name="background2">#fafafa</color>
+    <color name="background1">#FF4A4A4A</color>
+    <color name="background2">#FF333333</color>
     <color name="background3">#EDEDED</color>
     <color name="background4">#f3f3f3</color>
 
@@ -17,12 +17,12 @@
 
     <color name="smartcity_text">#8a8a8a</color>
 
-    <color name="sideslip_head_background">#FFFFFF</color>
+    <color name="sideslip_head_background">#FF4A4A4A</color>
     <color name="sideslip_head_image">#e1dfdf</color>
-    <color name="sideslip_menu_background">#FFFFFF</color>
+    <color name="sideslip_menu_background">#FF4A4A4A</color>
     <color name="sideslip_menu_theme">#666666</color>
 
-    <color name="news_title">#333333</color>
+    <color name="news_title">#FFC1C1C1</color>
     <color name="news_tab">#999999</color>
 
     <color name="login_edittext_hint">#FF999999</color>
@@ -39,5 +39,4 @@
     <color name="share_bg">#FFF7F7F7</color>
     <color name="share_text">#FF666666</color>
     <color name="share_button">#FFFFFFFF</color>
-
 </resources>

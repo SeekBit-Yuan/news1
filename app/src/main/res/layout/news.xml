@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/background2"
+        android:background="@color/background1"
         android:orientation="horizontal">
 
         <RadioButton

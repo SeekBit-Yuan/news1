@@ -79,7 +79,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
                 break;
             case R.id.login_forgetpw:
-                Toast.makeText(LoginActivity.this, getString(R.string.login_forgetpassword), Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(LoginActivity.this,ForgetpwActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.login_weixin:
                 Toast.makeText(LoginActivity.this, getString(R.string.login_weixin), Toast.LENGTH_SHORT).show();

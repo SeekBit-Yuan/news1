@@ -1,6 +1,7 @@
 package com.sznews.news;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,7 +39,7 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener{
 
 
     @BindView(R.id.imageView_login)
@@ -87,12 +89,23 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private final String DIGITAL_NEWSPAPER_URL4 = "http://jb.sznews.com/MB/layout/" + ym + "/" + d + "/colA01.html";
     private final String DIGITAL_NEWSPAPER_URL5 = "http://barb.sznews.com/MB/layout/" + ym + "/" + d + "/colA01.html";
 
+    private static boolean enableNightMode = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        //判断是否是夜间模式
+        if(!enableNightMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
 
         //自定义底部radiobutton图片大小和位置
 //        changeImageSize();
@@ -185,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         RadioButton radioCollection = headerView.findViewById(R.id.sideslip_collection);
         RadioButton radioHistory = headerView.findViewById(R.id.sideslip_history);
-        RadioButton radioModel = headerView.findViewById(R.id.sideslip_model);
+        final RadioButton radioModel = headerView.findViewById(R.id.sideslip_model);
 
         ImageView imageLogin = headerView.findViewById(R.id.login);
         TextView textGegister = headerView.findViewById(R.id.sideslip_head_register);
@@ -202,7 +215,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         radioModel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, getString(R.string.sideslip_model), Toast.LENGTH_SHORT).show();
+                if(radioModel.isChecked() && !enableNightMode){
+                    setEnableNightMode(true);
+                }else if(radioModel.isChecked() && enableNightMode){
+                    setEnableNightMode(false);
+                }
                 sideslip.closeDrawer(nav);
             }
         });
@@ -242,49 +259,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             }
         });
     }
-
-//    private void initFragment(int index) {
-//        fragmentManager = getSupportFragmentManager();
-//        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-//        ((RadioButton) radioGroup.findViewById(R.id.radio_news)).setChecked(true);
-//        //开启事务
-//        transaction = fragmentManager.beginTransaction();
-//        Fragment mfragment = new NewsFragment();
-//        transaction.replace(R.id.Framegment, mfragment);
-//        //提交事务
-//        transaction.commit();
-//
-//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                fragmentManager = getSupportFragmentManager();
-//                transaction = fragmentManager.beginTransaction();
-//                hideFragment(transaction);
-//                switch (checkedId) {
-//                    case R.id.radio_news:
-//                        transaction = fragmentManager.beginTransaction();
-//                        Fragment newsFragment = new NewsFragment();
-//                        transaction.replace(R.id.Framegment, newsFragment);
-//                        transaction.commit();
-//                        break;
-//                    case R.id.radio_smartcity:
-//                        transaction = fragmentManager.beginTransaction();
-//                        Fragment smartcityFragment = new SemartCityFragment();
-//                        transaction.replace(R.id.Framegment, smartcityFragment);
-//                        transaction.commit();
-//                        break;
-//                    case R.id.radio_szbbs:
-//                        transaction = fragmentManager.beginTransaction();
-//                        Fragment szbbsFragment = new BBSFragment();
-//                        transaction.replace(R.id.Framegment, szbbsFragment);
-//                        transaction.commit();
-//                        break;
-//                }
-//
-//            }
-//        });
-//
-//    }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -375,18 +349,18 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         return super.onKeyUp(keyCode, event);
     }
 
-    //侧滑菜单点击事件监听
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.imageView_login://点击logo，跳出侧滑菜单
-                if (sideslip.isDrawerOpen(nav)) {
-                    sideslip.closeDrawer(nav);
-                } else {
-                    sideslip.openDrawer(nav);
-                }
-                break;
+    /**
+     * enable night mode or not
+     * @param enableNightMode   true or false
+     */
+    public void setEnableNightMode(boolean enableNightMode) {
+        this.enableNightMode = enableNightMode;
+        if(enableNightMode) {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+        recreate();
     }
 
 }
